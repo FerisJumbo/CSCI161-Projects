@@ -90,9 +90,9 @@ public class Client {
         
         // <editor-fold defaultstate="uncollapsed" desc=" Step 4 ">
 
-        System.out.println("\nGiving a 10% raise to all employee's and printing only non-null employees.");
+        System.out.println("\nGiving a 25% raise to all employee's and printing only non-null employees.");
         
-        giveRaise(0.10);
+        giveRaise(0.25);
         
         for (Employee e : employeeList) {
             // Tests if an employee is given the null id number

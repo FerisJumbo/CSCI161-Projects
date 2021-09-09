@@ -97,9 +97,7 @@ public class Hourly extends Employee {
      */
     @Override
     public String toString() {
-        return  super.toString() +
-                "\nPosition: " + getPosition() +
-                "\nRate:     $" + getHourlyRate() + "/hour";
+        return  super.toString()+":"+getClass().getName()+"@"+position+":"+hourlyRate;
     }
 
     // </editor-fold>

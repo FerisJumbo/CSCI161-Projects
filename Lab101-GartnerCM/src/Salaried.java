@@ -104,9 +104,7 @@ public class Salaried extends Employee {
      */
     @Override
     public String toString() {
-        return  super.toString() +
-                "\nTitle:    " + title +
-                "\nSalary:   $" + salary + "/year";
+        return  super.toString()+":"+getClass().getName()+"@"+title+":"+salary;
     }
 
     // </editor-fold>

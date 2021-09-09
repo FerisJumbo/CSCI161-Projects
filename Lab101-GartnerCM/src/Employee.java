@@ -80,8 +80,7 @@ public class Employee {
      */
     @Override
     public String toString() {
-        return  "\nID:       " + id +
-                "\nName:     " + name;
+        return  getClass().getName()+"@"+name+":"+id;
     }
 
     // </editor-fold>
