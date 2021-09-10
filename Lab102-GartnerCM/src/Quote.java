@@ -23,13 +23,13 @@ public class Quote {
     
     /**
      * Creates a full quote object
-     * @param ticker
-     * @param date
-     * @param open
-     * @param high
-     * @param low
-     * @param close
-     * @param vol 
+     * @param ticker ticker
+     * @param date date
+     * @param open open
+     * @param high high
+     * @param low low
+     * @param close close
+     * @param vol vol
      */
     public Quote(String ticker, String date, double open, double high, double low, double close, int vol) {
         this.ticker = ticker;
@@ -43,13 +43,19 @@ public class Quote {
     
     // </editor-fold>
     
-    
+    /**
+     * Returns the difference between close and open
+     * @return margin
+     */
+    public double margin() {
+        return close-open;
+    }
     
     // <editor-fold defaultstate="uncollapsed" desc=" Override Methods ">
 
     /**
      * To String Method
-     * @return 
+     * @return  to String
      */
     @Override
     public String toString() {
@@ -59,8 +65,8 @@ public class Quote {
     
     /**
      * Equals Method
-     * @param obj
-     * @return 
+     * @param obj object
+     * @return whether the objects are equal to each other
      */
     @Override
     public boolean equals(Object obj) {
