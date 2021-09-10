@@ -48,7 +48,7 @@ public class Quote {
      * @return margin
      */
     public double margin() {
-        return close-open;
+        return Math.floor((close-open) * 100) / 100;
     }
     
     // <editor-fold defaultstate="uncollapsed" desc=" Override Methods ">
@@ -70,9 +70,14 @@ public class Quote {
      */
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof Quote o) {
-            if ( o.getTicker().equals(getTicker()) && o.getDate().equals(getDate()) && o.getOpen() == getOpen() &&
-                    o.getHigh() == getHigh() && o.getLow() == getLow() && o.getClose() == getClose() && o.getVol() == getVol()) {
+        if (obj instanceof Quote) {
+            if ( ((Quote) obj).getTicker().equals(getTicker()) &&
+                    ((Quote) obj).getDate().equals(getDate()) &&
+                    ((Quote) obj).getOpen() == getOpen() &&
+                    ((Quote) obj).getHigh() == getHigh() &&
+                    ((Quote) obj).getLow() == getLow() &&
+                    ((Quote) obj).getClose() == getClose() &&
+                    ((Quote) obj).getVol() == getVol()) {
                 return true;
             }
             return false;

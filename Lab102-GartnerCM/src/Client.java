@@ -29,11 +29,11 @@ public class Client {
             System.out.print("What is the file path to data.txt?\n> ");
             String path = keyboard.nextLine();
             
-            // Used to quickly test the project on local machine
-            if (path.equals("test")) {
-                path = "D:/System/Downloads/Lab102Data.txt";
-                System.out.println("Using test directory | " + path);
-            }
+//            // Used to quickly test the project on local machine
+//            if (path.equals("test")) {
+//                path = "D:/System/Downloads/Lab102Data.txt";
+//                System.out.println("Using test directory | " + path);
+//            }
             
             dataFile = new File(path);
             
@@ -128,7 +128,7 @@ public class Client {
         
         System.out.printf("\n\nBiggest Gainers\t\t Gain: %1.2f\n", gainAmt);
         for (Quote q : bigGain) { System.out.println(q.getTicker()); }
-        System.out.printf("\n\nBiggest Lossers\t\t Loss: %1.2f\n", lossAmt);
+        System.out.printf("\n\nBiggest Losers\t\t Loss: %1.2f\n", lossAmt);
         for (Quote q : bigLoss) { System.out.println(q.getTicker()); }
         System.out.printf("\n\nMost Traded\t\t Traded: %,-10d\n", volAmt);
         for (Quote q : mostVol) { System.out.println(q.getTicker()); }
