@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Recursive {
     
     /**
-     * Sums 1/n for values between 1-n specificed by the user.
+     * Sums 1/n for values between 1-n specified by the user.
      * Calls recursive method harmonicRecursive(int n) to calculate value
      * while this method mearly checks for input correctness.
      * @param n natural number > 0
@@ -43,9 +43,9 @@ public class Recursive {
     /**
      * Converts a file full of integers to an array of integers with a delimiter
      * of "\\s" (white space).
-     * @param filePath
+     * @param filePath file path
      * @return array of integers
-     * @throws java.io.FileNotFoundException
+     * @throws java.io.FileNotFoundException file not found
      */
     public static int[] fileToIntArray(String filePath) throws FileNotFoundException {
         File file = new File(filePath);
@@ -85,7 +85,7 @@ public class Recursive {
         
         // *Initial Check to make array length a power of 2*
         int n = A.length;
-        int power = 1;
+        int power = -1;
         for (int i = power; i < 31; i++) { // Can only check up to 2^31 as that is the max positive integer
             if (Math.pow(2, i) >= n) {
                 power = i;
@@ -126,5 +126,25 @@ public class Recursive {
             return B;
         else
             return isabelsMethodRecursive(B);
+    }
+    
+    /**
+     * Recursively runs through the file directory starting at startPath and
+     * running through printing all absolute locations where it finds
+     * targetFileName.
+     * @param targetFileName target name
+     * @param startPath start path
+     * @throws IllegalArgumentException  illegal argument
+     */
+    public static void findFile( String targetFileName, String startPath) throws IllegalArgumentException{
+        File file = new File(startPath);
+        if (!file.isDirectory()) throw new IllegalArgumentException("Start path is not a directory: "+startPath);
+        
+        String[] files = file.list();
+        
+        for (String f : files) {
+            if (f.equals(targetFileName)) System.out.println(file.getAbsoluteFile()+"\\"+targetFileName);
+            if (new File(file.getAbsoluteFile()+"\\"+f).isDirectory()) findFile( targetFileName, file.getAbsolutePath()+"\\"+f);
+        }
     }
 }
