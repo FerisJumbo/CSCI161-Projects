@@ -104,7 +104,7 @@ public class TablePrint {
     }
     
     /**
-     * Returns a printout of title, topics and an int argument array under topics
+     * Returns a printout of title, topics and a long argument array under topics
      * in a table format that is equally spaced
      * The value of values.length must equal the value of topics.length.
      * @param values int array of values under topics
